@@ -1,3 +1,20 @@
+<<<<<<< HEAD
 _site/
 .sass-cache
 .ruby-version
+=======
+_site
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+codekit-config.json
+node_modules
+Gemfile.lock
+_site/*
+_theme_packages/*
+Thumbs.db
+.DS_Store
+!.gitkeep
+.rbenv-version
+.rvmrc
+>>>>>>> f851a9fa39bcf4e7c44d904d68bb5321f214c832
