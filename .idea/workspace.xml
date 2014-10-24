@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7241b83d-010e-423a-a57d-04673bab4777" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-10-23-install_redmine_in_centos.md" afterPath="$PROJECT_DIR$/_posts/2014-10-23-install_redmine_in_centos.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-10-24-lichengze.md" afterPath="$PROJECT_DIR$/_posts/2014-10-24-lichengze.md" />
     </list>
     <ignored path="vaveee.github.com.iws" />
@@ -40,8 +39,8 @@
       <list>
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/2014-05-18-github.md" />
-        <option value="$PROJECT_DIR$/_posts/2014-10-24-lichengze.md" />
         <option value="$PROJECT_DIR$/_posts/2014-10-23-install_redmine_in_centos.md" />
+        <option value="$PROJECT_DIR$/_posts/2014-10-24-lichengze.md" />
       </list>
     </option>
   </component>
@@ -363,7 +362,7 @@
     <entry file="file://$PROJECT_DIR$/_posts/2014-10-24-lichengze.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02377179" vertical-offset="0" max-vertical-offset="631">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
           <folding />
         </state>
       </provider>
