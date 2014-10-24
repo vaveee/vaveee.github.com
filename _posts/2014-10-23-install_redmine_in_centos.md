@@ -1,5 +1,4 @@
 ---
-date: 2014-10-24 17:31:42+00:00
 layout: post
 title: 'centos6.x 安装nginx+thin+redmine  '
 categories: 文档
