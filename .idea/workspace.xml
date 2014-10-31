@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7241b83d-010e-423a-a57d-04673bab4777" name="Default" comment="" />
+    <list default="true" id="7241b83d-010e-423a-a57d-04673bab4777" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-10-31-sales.md" afterPath="$PROJECT_DIR$/_posts/2014-10-31-sales.md" />
+    </list>
     <ignored path="vaveee.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="2014-10-31-sales.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2014-10-31-sales.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48387095" vertical-offset="330" max-vertical-offset="1125">
-              <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.9516129" vertical-offset="415" max-vertical-offset="1095">
+              <caret line="67" column="4" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -432,8 +434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-10-31-sales.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48387095" vertical-offset="330" max-vertical-offset="1125">
-          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.9516129" vertical-offset="415" max-vertical-offset="1095">
+          <caret line="67" column="4" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="4" />
           <folding />
         </state>
       </provider>
