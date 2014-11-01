@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "cordova_module_1"
+title: "使用phonegrap 进行手机开发"
 categories:
 -
-tags:
+tags:phonegrap ios 手机开发
 -
 
 
