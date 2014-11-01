@@ -9,10 +9,11 @@ tags: phonegrap ios 手机开发
 ---
 
 #####配置开发环境
-http://ccoenraets.github.io/cordova-tutorial/create-cordova-project.html
 
-    因为版本的问题，add ios会报错，参照升级
-    
+    http://ccoenraets.github.io/cordova-tutorial/create-cordova-project.html
+
+因为版本的问题，add ios会报错，参照升级
+
     http://stackoverflow.com/questions/26646052/error-while-adding-cordova-platform-ios
     http://cordova.apache.org/announcements/2014/10/16/cordova-4.html
 
