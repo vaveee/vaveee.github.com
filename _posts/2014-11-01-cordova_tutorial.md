@@ -1,11 +1,9 @@
 ---
 layout: post
-title: "使用phonegrap 进行手机开发"
+title: "使用phonegrap进行手机开发"
 categories:
--
-tags:phonegrap ios 手机开发
--
-
+tags: phonegrap ios 手机开发
+---
 
 
 ---

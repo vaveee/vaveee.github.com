@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7241b83d-010e-423a-a57d-04673bab4777" name="Default" comment="" />
+    <list default="true" id="7241b83d-010e-423a-a57d-04673bab4777" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-11-01-cordova_tutorial.md" afterPath="$PROJECT_DIR$/_posts/2014-11-01-cordova_tutorial.md" />
+    </list>
     <ignored path="vaveee.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="2014-11-01-cordova_tutorial.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2014-11-01-cordova_tutorial.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42519686" vertical-offset="0" max-vertical-offset="635">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.09448819" vertical-offset="0" max-vertical-offset="635">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -47,13 +49,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/_posts/2014-05-18-github.md" />
-        <option value="$PROJECT_DIR$/_posts/2014-10-23-install_redmine_in_centos.md" />
         <option value="$PROJECT_DIR$/_posts/2014-10-24-lichengze.md" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/CNAME" />
         <option value="$PROJECT_DIR$/_site/CNAME" />
         <option value="$PROJECT_DIR$/_posts/2014-10-31-sales.md" />
         <option value="$PROJECT_DIR$/_posts/2014-11-01-cordova_module_1.md" />
+        <option value="$PROJECT_DIR$/_posts/2014-10-23-install_redmine_in_centos.md" />
         <option value="$PROJECT_DIR$/_posts/2014-11-01-cordova_tutorial.md" />
       </list>
     </option>
@@ -421,14 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2014-10-31-sales.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46945336" vertical-offset="53" max-vertical-offset="1485">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-10-24-lichengze.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35433072" vertical-offset="0" max-vertical-offset="635">
@@ -437,18 +431,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2014-10-31-sales.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5546624" vertical-offset="0" max-vertical-offset="1485">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-10-23-install_redmine_in_centos.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14469454" vertical-offset="0" max-vertical-offset="3510">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3510">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-11-01-cordova_tutorial.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42519686" vertical-offset="0" max-vertical-offset="635">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.09448819" vertical-offset="0" max-vertical-offset="635">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
