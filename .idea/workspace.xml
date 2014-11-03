@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7241b83d-010e-423a-a57d-04673bab4777" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-11-03-29method.md" afterPath="$PROJECT_DIR$/_posts/2014-11-03-29method.md" />
-    </list>
+    <list default="true" id="7241b83d-010e-423a-a57d-04673bab4777" name="Default" comment="" />
     <ignored path="vaveee.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="2014-11-03-29method.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2014-11-03-29method.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9527559" vertical-offset="70" max-vertical-offset="765">
-              <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.31496063" vertical-offset="70" max-vertical-offset="765">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -453,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-11-03-29method.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9527559" vertical-offset="70" max-vertical-offset="765">
-          <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.31496063" vertical-offset="70" max-vertical-offset="765">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
