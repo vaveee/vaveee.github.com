@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "node.js.tutorial"
+title: "node.js入门教程"
 categories:
 - 
 tags:
@@ -13,7 +13,7 @@ tags:
 ###服务端JavaScript
 
 ####安装 node.js
-![](http://nodejs.org/download/)
+http://nodejs.org/download/
 
 ####“Hello World”
 
