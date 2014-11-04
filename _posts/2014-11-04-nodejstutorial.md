@@ -17,13 +17,10 @@ http://nodejs.org/download/
 
 ####“Hello World”
 
-
 创建一个helloworld.js文件。：
-
-console.log("Hello World");
+    console.log("Hello World");
 保存该文件，并通过Node.js来执行：
-
-node helloworld.js
+    node helloworld.js
 正常的话，就会在终端输出Hello World 。
 
 
