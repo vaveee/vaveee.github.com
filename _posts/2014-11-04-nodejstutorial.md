@@ -10,52 +10,15 @@ tags:
 ---
 
 
-目录
-关于
-状态
-读者对象
-本书结构
-JavaScript与Node.js
-JavaScript与你
-简短申明
-服务器端JavaScript
-“Hello World”
-一个完整的基于Node.js的web应用
-用例
-应用不同模块分析
-构建应用的模块
-一个基础的HTTP服务器
-分析HTTP服务器
-进行函数传递
-函数传递是如何让HTTP服务器工作的
-基于事件驱动的回调
-服务器是如何处理请求的
-服务端的模块放在哪里
-如何来进行请求的“路由”
-行为驱动执行
-路由给真正的请求处理程序
-让请求处理程序作出响应
-不好的实现方式
-阻塞与非阻塞
-以非阻塞操作进行请求响应
-更有用的场景
-处理POST请求
-处理文件上传
-总结与展望
-JavaScript与Node.js
+###服务端JavaScript
 
-
-
-服务端JavaScript
-
-安装 node.js
+####安装 node.js
 ![](http://nodejs.org/download/)
 
-“Hello World”
+####“Hello World”
 
-好了，“废话”不多说了，马上开始我们第一个Node.js应用：“Hello World”。
 
-打开你最喜欢的编辑器，创建一个helloworld.js文件。我们要做就是向STDOUT输出“Hello World”，如下是实现该功能的代码：
+创建一个helloworld.js文件。：
 
 console.log("Hello World");
 保存该文件，并通过Node.js来执行：
@@ -63,9 +26,8 @@ console.log("Hello World");
 node helloworld.js
 正常的话，就会在终端输出Hello World 。
 
-好吧，我承认这个应用是有点无趣，那么下面我们就来点“干货”。
 
-一个完整的基于Node.js的web应用
+####一个完整的基于Node.js的web应用
 
 用例
 
