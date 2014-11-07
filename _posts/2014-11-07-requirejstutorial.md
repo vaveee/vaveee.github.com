@@ -22,7 +22,7 @@ tags:
 7. 优化器r.js
 8. 参考链接
 
-#####概述
+###概述
 
 RequireJS是一个工具库，主要用于客户端的模块管理。它可以让客户端的代码分成一个个模块，实现异步或动态加载，
 从而提高代码的性能和可维护性。它的模块管理遵守AMD规范（Asynchronous Module Definition）。
@@ -32,10 +32,11 @@ RequireJS的基本思想是，通过define方法，将代码定义为模块；�
 首先，将require.js嵌入网页，然后就能在网页中进行模块化编程了。
 
 <script data-main="scripts/main" src="scripts/require.js"></script>
+
 上面代码的data-main属性不可省略，用于指定主代码所在的脚本文件，在上例中为scripts子目录下的main.js文件。
 用户自定义的代码就放在这个main.js文件中。
 
-#####define方法：定义模块
+###define方法：定义模块
 
 define方法用于定义模块，RequireJS要求每个模块放在一个单独的文件里。
 
@@ -46,20 +47,22 @@ define方法用于定义模块，RequireJS要求每个模块放在一个单独�
 
 如果被定义的模块是一个独立模块，不需要依赖任何其他模块，可以直接用define方法生成。
 
-define({
-    method1: function() {},
-    method2: function() {},
-});
+    define({
+        method1: function() {},
+        method2: function() {},
+    });
+
 上面代码生成了一个拥有method1、method2两个方法的模块。
 
 另一种等价的写法是，把对象写成一个函数，该函数的返回值就是输出的模块。
 
-define(function () {
-    return {
-        method1: function() {},
-        method2: function() {},
-    };
-});
+    define(function () {
+        return {
+            method1: function() {},
+            method2: function() {},
+        };
+    });
+
 后一种写法的自由度更高一点，可以在函数体内写一些模块初始化代码。
 
 值得指出的是，define定义的模块可以返回任何值，不限于对象。
@@ -68,9 +71,10 @@ define(function () {
 
 如果被定义的模块需要依赖其他模块，则define方法必须采用下面的格式。
 
-define(['module1', 'module2'], function(m1, m2) {
-   ...
-});
+    define(['module1', 'module2'], function(m1, m2) {
+       ...
+    });
+
 define方法的第一个参数是一个数组，它的成员是当前模块所依赖的模块。
 比如，['module1', 'module2']表示我们定义的这个新模块依赖于module1模块和module2模块，
 只有先加载这两个模块，新模块才能正常运行。一般情况下，module1模块和module2模块指的是，
@@ -80,16 +84,17 @@ define方法的第二个参数是一个函数，当前面数组的所有成员�
 它的参数与数组的成员一一对应，比如function(m1, m2)就表示，这个函数的第一个参数m1对应module1模块，
 第二个参数m2对应module2模块。这个函数必须返回一个对象，供其他模块调用。
 
-define(['module1', 'module2'], function(m1, m2) {
+    define(['module1', 'module2'], function(m1, m2) {
 
-    return {
-        method: function() {
-            m1.methodA();
-            m2.methodB();
-        }
-    };
+        return {
+            method: function() {
+                m1.methodA();
+                m2.methodB();
+            }
+        };
 
-});
+    });
+
 上面代码表示新模块返回一个对象，该对象的method方法就是外部调用的接口，
 menthod方法内部调用了m1模块的methodA方法和m2模块的methodB方法。
 
@@ -97,95 +102,96 @@ menthod方法内部调用了m1模块的methodA方法和m2模块的methodB方法�
 
 如果依赖的模块很多，参数与模块一一对应的写法非常麻烦。
 
-define(
-    [       'dep1', 'dep2', 'dep3', 'dep4', 'dep5', 'dep6', 'dep7', 'dep8'],
-    function(dep1,   dep2,   dep3,   dep4,   dep5,   dep6,   dep7,   dep8){
-        ...
-    }
-);
+    define(
+        [       'dep1', 'dep2', 'dep3', 'dep4', 'dep5', 'dep6', 'dep7', 'dep8'],
+        function(dep1,   dep2,   dep3,   dep4,   dep5,   dep6,   dep7,   dep8){
+            ...
+        }
+    );
+
 为了避免像上面代码那样繁琐的写法，RequireJS提供一种更简单的写法。
 
-define(
-    function (require) {
-        var dep1 = require('dep1'),
-            dep2 = require('dep2'),
-            dep3 = require('dep3'),
-            dep4 = require('dep4'),
-            dep5 = require('dep5'),
-            dep6 = require('dep6'),
-            dep7 = require('dep7'),
-            dep8 = require('dep8');
+    define(
+        function (require) {
+            var dep1 = require('dep1'),
+                dep2 = require('dep2'),
+                dep3 = require('dep3'),
+                dep4 = require('dep4'),
+                dep5 = require('dep5'),
+                dep6 = require('dep6'),
+                dep7 = require('dep7'),
+                dep8 = require('dep8');
 
-            ...
-    }
+                ...
+        }
 
-});
+    });
 
 下面是一个define实际运用的例子。
 
-define(['math', 'graph'],
-    function ( math, graph ) {
-        return {
-            plot: function(x, y){
-                return graph.drawPie(math.randomGrid(x,y));
+    define(['math', 'graph'],
+        function ( math, graph ) {
+            return {
+                plot: function(x, y){
+                    return graph.drawPie(math.randomGrid(x,y));
+                }
             }
-        }
-    };
-);
+        };
+    );
 
 上面代码定义的模块依赖math和graph两个库，然后返回一个具有plot接口的对象。
 
 另一个实际的例子是，通过判断浏览器是否为IE，而选择加载zepto或jQuery。
 
-define(('__proto__' in {} ? ['zepto'] : ['jquery']), function($) {
-    return $;
-});
+    define(('__proto__' in {} ? ['zepto'] : ['jquery']), function($) {
+        return $;
+    });
 
 上面代码定义了一个中间模块，该模块先判断浏览器是否支持proto属性（除了IE，其他浏览器都支持），
 如果返回true，就加载zepto库，否则加载jQuery库。
 
-#####require方法：调用模块
+###require方法：调用模块
 
 require方法用于调用模块。它的参数与define方法类似。
 
-require(['foo', 'bar'], function ( foo, bar ) {
-        foo.doSomething();
-});
+    require(['foo', 'bar'], function ( foo, bar ) {
+            foo.doSomething();
+    });
 
 上面方法表示加载foo和bar两个模块，当这两个模块都加载成功后，执行一个回调函数。该回调函数就用来完成具体的任务。
 
 require方法的第一个参数，是一个表示依赖关系的数组。这个数组可以写得很灵活，请看下面的例子。
 
-require( [ window.JSON ? undefined : 'util/json2' ], function ( JSON ) {
-  JSON = JSON || window.JSON;
+    require( [ window.JSON ? undefined : 'util/json2' ], function ( JSON ) {
+      JSON = JSON || window.JSON;
 
-  console.log( JSON.parse( '{ "JSON" : "HERE" }' ) );
-});
+      console.log( JSON.parse( '{ "JSON" : "HERE" }' ) );
+    });
 
 上面代码加载JSON模块时，首先判断浏览器是否原生支持JSON对象。
 如果是的，则将undefined传入回调函数，否则加载util目录下的json2模块。
 
 require方法也可以用在define方法内部。
 
-define(function (require) {
-   var otherModule = require('otherModule');
-});
+    define(function (require) {
+       var otherModule = require('otherModule');
+    });
 
 下面的例子显示了如何动态加载模块。
 
-define(function ( require ) {
-    var isReady = false, foobar;
+    define(function ( require ) {
+        var isReady = false, foobar;
 
-    require(['foo', 'bar'], function (foo, bar) {
-        isReady = true;
-        foobar = foo() + bar();
+        require(['foo', 'bar'], function (foo, bar) {
+            isReady = true;
+            foobar = foo() + bar();
+        });
+
+        return {
+            isReady: isReady,
+            foobar: foobar
+        };
     });
-
-    return {
-        isReady: isReady,
-        foobar: foobar
-    };
-});
 
 上面代码所定义的模块，内部加载了foo和bar两个模块，
 在没有加载完成前，isReady属性值为false，加载完成后就变成了true。
@@ -193,44 +199,47 @@ define(function ( require ) {
 
 下面的例子是模块的输出结果是一个promise对象。
 
-define(['lib/Deferred'], function( Deferred ){
-    var defer = new Deferred();
-    require(['lib/templates/?index.html','lib/data/?stats'],
-        function( template, data ){
-            defer.resolve({ template: template, data:data });
-        }
-    );
-    return defer.promise();
-});
+    define(['lib/Deferred'], function( Deferred ){
+        var defer = new Deferred();
+        require(['lib/templates/?index.html','lib/data/?stats'],
+            function( template, data ){
+                defer.resolve({ template: template, data:data });
+            }
+        );
+        return defer.promise();
+    });
+
 上面代码的define方法返回一个promise对象，可以在该对象的then方法，指定下一步的动作。
 
 如果服务器端采用JSONP模式，则可以直接在require中调用，方法是指定JSONP的callback参数为define。
 
-require( [
-    "http://someapi.com/foo?callback=define"
-], function (data) {
-    console.log(data);
-});
+    require( [
+        "http://someapi.com/foo?callback=define"
+    ], function (data) {
+        console.log(data);
+    });
+
 require方法允许添加第三个参数，即错误处理的回调函数。
 
-require(
-    [ "backbone" ],
-    function ( Backbone ) {
-        return Backbone.View.extend({ /* ... */ });
-    },
-    function (err) {
-        // ...
-    }
-);
+    require(
+        [ "backbone" ],
+        function ( Backbone ) {
+            return Backbone.View.extend({ /* ... */ });
+        },
+        function (err) {
+            // ...
+        }
+    );
+
 require方法的第三个参数，即处理错误的回调函数，接受一个error对象作为参数。
 
 require对象还允许指定一个全局性的Error事件的监听函数。所有没有被上面的方法捕获的错误，都会被触发这个监听函数。
 
-requirejs.onError = function (err) {
-    // ...
-};
+    requirejs.onError = function (err) {
+        // ...
+    };
 
-#####AMD模式小结
+###AMD模式小结
 
 define和require这两个定义模块、调用模块的方法，合称为AMD模式。
 它的模块定义的方法非常清晰，不会污染全局环境，能够清楚地显示依赖关系。
@@ -241,14 +250,15 @@ AMD模式可以用于浏览器环境，并且允许非同步加载模块，也�
 require方法本身也是一个对象，它带有一个config方法，用来配置require.js运行参数。
 config方法接受一个对象作为参数。
 
-require.config({
-    paths: {
-        jquery: [
-            '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js',
-            'lib/jquery'
-        ]
-    }
-});
+    require.config({
+        paths: {
+            jquery: [
+                '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js',
+                'lib/jquery'
+            ]
+        }
+    });
+
 config方法的参数对象有以下主要成员：
 
 （1）paths
@@ -270,39 +280,41 @@ baseUrl参数指定本地模块位置的基准目录，即本地模块的路径�
 
 有些库不是AMD兼容的，这时就需要指定shim属性的值。shim可以理解成“垫片”，用来帮助require.js加载非AMD规范的库。
 
-require.config({
-    paths: {
-        "backbone": "vendor/backbone",
-        "underscore": "vendor/underscore"
-    },
-    shim: {
-        "backbone": {
-            deps: [ "underscore" ],
-            exports: "Backbone"
+    require.config({
+        paths: {
+            "backbone": "vendor/backbone",
+            "underscore": "vendor/underscore"
         },
-        "underscore": {
-            exports: "_"
+        shim: {
+            "backbone": {
+                deps: [ "underscore" ],
+                exports: "Backbone"
+            },
+            "underscore": {
+                exports: "_"
+            }
         }
-    }
-});
+    });
+
 上面代码中的backbone和underscore就是非AMD规范的库。shim指定它们的依赖关系（backbone依赖于underscore），以及输出符号（backbone为“Backbone”，underscore为“_”）。
 
-#####插件
+###插件
 
 RequireJS允许使用插件，加载各种格式的数据。完整的插件清单可以查看官方网站。
 
 下面是插入文本数据所使用的text插件的例子。
 
-define([
-    'backbone',
-    'text!templates.html'
-], function( Backbone, template ){
-   // ...
-});
+    define([
+        'backbone',
+        'text!templates.html'
+    ], function( Backbone, template ){
+       // ...
+    });
+
 上面代码加载的第一个模块是backbone，第二个模块则是一个文本，用'text!'表示。
 该文本作为字符串，存放在回调函数的template变量中。
 
-##### 优化器r.js
+### 优化器r.js
 
 RequireJS提供一个基于node.js的命令行工具r.js，用来压缩多个js文件。
 它的主要作用是将多个模块文件压缩合并成一个脚本文件，以减少网页的HTTP请求数。
@@ -332,42 +344,43 @@ node r.js -o build.js
 
 下面是一个参数文件的范例，假定位置就在根目录下，文件名为build.js。
 
-({
-    appDir: './',
-    baseUrl: './js',
-    dir: './dist',
-    modules: [
-        {
-            name: 'main'
-        }
-    ],
-    fileExclusionRegExp: /^(r|build)\.js$/,
-    optimizeCss: 'standard',
-    removeCombined: true,
-    paths: {
-        jquery: 'lib/jquery',
-        underscore: 'lib/underscore',
-        backbone: 'lib/backbone/backbone',
-        backboneLocalstorage: 'lib/backbone/backbone.localStorage',
-        text: 'lib/require/text'
-    },
-    shim: {
-        underscore: {
-            exports: '_'
+    ({
+        appDir: './',
+        baseUrl: './js',
+        dir: './dist',
+        modules: [
+            {
+                name: 'main'
+            }
+        ],
+        fileExclusionRegExp: /^(r|build)\.js$/,
+        optimizeCss: 'standard',
+        removeCombined: true,
+        paths: {
+            jquery: 'lib/jquery',
+            underscore: 'lib/underscore',
+            backbone: 'lib/backbone/backbone',
+            backboneLocalstorage: 'lib/backbone/backbone.localStorage',
+            text: 'lib/require/text'
         },
-        backbone: {
-            deps: [
-                'underscore',
-                'jquery'
-            ],
-            exports: 'Backbone'
-        },
-        backboneLocalstorage: {
-            deps: ['backbone'],
-            exports: 'Store'
+        shim: {
+            underscore: {
+                exports: '_'
+            },
+            backbone: {
+                deps: [
+                    'underscore',
+                    'jquery'
+                ],
+                exports: 'Backbone'
+            },
+            backboneLocalstorage: {
+                deps: ['backbone'],
+                exports: 'Store'
+            }
         }
-    }
-})
+    })
+
 上面代码将多个模块压缩合并成一个main.js。
 
 参数文件的主要成员解释如下：
@@ -398,31 +411,25 @@ generateSourceMaps：是否要生成source map文件。
 
 下面是另一个build.js的例子。
 
-({
-    mainConfigFile : "js/main.js",
-    baseUrl: "js",
-    removeCombined: true,
-    findNestedDependencies: true,
-    dir: "dist",
-    modules: [
-        {
-            name: "main",
-            exclude: [
-                "infrastructure"
-            ]
-        },
-        {
-            name: "infrastructure"
-        }
-    ]
-})
+    ({
+        mainConfigFile : "js/main.js",
+        baseUrl: "js",
+        removeCombined: true,
+        findNestedDependencies: true,
+        dir: "dist",
+        modules: [
+            {
+                name: "main",
+                exclude: [
+                    "infrastructure"
+                ]
+            },
+            {
+                name: "infrastructure"
+            }
+        ]
+    })
+
 上面代码将模块文件压缩合并成两个文件，第一个是main.js（指定排除infrastructure.js），第二个则是infrastructure.js。
 
-#####参考链接
-
-NaorYe, Optimize (Concatenate and Minify) RequireJS Projects
-Jonathan Creamer, Deep dive into Require.js
-Addy Osmani, Writing Modular JavaScript With AMD, CommonJS & ES Harmony
-Jim Cowart, Five Helpful Tips When Using RequireJS
-Jim Cowart, Using r.js to Optimize Your RequireJS Project
 
