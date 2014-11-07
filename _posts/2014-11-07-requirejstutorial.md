@@ -85,14 +85,12 @@ define方法的第二个参数是一个函数，当前面数组的所有成员�
 第二个参数m2对应module2模块。这个函数必须返回一个对象，供其他模块调用。
 
     define(['module1', 'module2'], function(m1, m2) {
-
         return {
             method: function() {
                 m1.methodA();
                 m2.methodB();
             }
         };
-
     });
 
 上面代码表示新模块返回一个对象，该对象的method方法就是外部调用的接口，
@@ -121,10 +119,8 @@ menthod方法内部调用了m1模块的methodA方法和m2模块的methodB方法�
                 dep6 = require('dep6'),
                 dep7 = require('dep7'),
                 dep8 = require('dep8');
-
                 ...
         }
-
     });
 
 下面是一个define实际运用的例子。
