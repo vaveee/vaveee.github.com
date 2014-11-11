@@ -160,7 +160,6 @@ require方法的第一个参数，是一个表示依赖关系的数组。这个�
 
     require( [ window.JSON ? undefined : 'util/json2' ], function ( JSON ) {
       JSON = JSON || window.JSON;
-
       console.log( JSON.parse( '{ "JSON" : "HERE" }' ) );
     });
 
@@ -177,12 +176,10 @@ require方法也可以用在define方法内部。
 
     define(function ( require ) {
         var isReady = false, foobar;
-
         require(['foo', 'bar'], function (foo, bar) {
             isReady = true;
             foobar = foo() + bar();
         });
-
         return {
             isReady: isReady,
             foobar: foobar
