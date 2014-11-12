@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "centos_user_manager"
+title: "centos用户管理和ftp使用"
 categories:
 - 
 tags:
@@ -8,3 +8,10 @@ tags:
 
 
 ---
+
+增加一个新用户
+
+useradd laval
+passwd laval
+
+
