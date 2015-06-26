@@ -43,9 +43,9 @@ tags: linux  centos  thin  redmine  nginx
 
 2. 安装ruby
 
-  这里使用最新版本的ruby：
+  这里使用ruby 1.9：
 
-    rvm install ruby
+    rvm install ruby -v 1.9.7
 
   如果出现类似下面的错误信息：
 
@@ -103,7 +103,7 @@ tags: linux  centos  thin  redmine  nginx
     cd redmine/config
     mv database.yml.example database.yml
 
-打开database.yul 设置数据库
+打开database.yml 设置数据库
 修改以下信息，为你对应的信息
 
     production:
@@ -141,7 +141,7 @@ http://110.76.45.201:3000/
 
     chkconfig --level 345 thin on
 
-vi /etc/thinredmine.yml
+vi /etc/thin/redmine.yml
 
     environment: production
     address: 0.0.0.0
