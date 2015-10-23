@@ -49,7 +49,7 @@ $ rake page name="pages/about.md"
 新建一个有着好看路径的页面：
 
 $ rake page name="pages/about"
-# 这会建立一个文件： ./pages/about/index.html
+这会建立一个文件： ./pages/about/index.html
 此rake任务会自动创建一个有着正确的格式化好文件名的文件和一个YAML Front Matter，同时包含Jekyll Bootstrap的设置文件。
 
 Jekyll-Bootstrap页面样例
