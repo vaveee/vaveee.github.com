@@ -26,7 +26,7 @@ $ gem install jekyll
 
 cd USENAME.github.com
 jekyll --server
-# 记得将USENAME改为你自己的GitHub用户名
+将USENAME改为你自己的GitHub用户名
 新建一篇博文（Post）
 
 你可以轻易地通过一个rake任务来新建博文：
@@ -34,7 +34,7 @@ jekyll --server
 $ rake post title="Hello World"
 此rake任务会自动创建一个有着正确的格式化好文件名的文件和一个YAML Front Matter。确保指定一个你自己的标题。缺省日期是当前日期。
 
-# 根据我的测试，写上日期才不会报错
+写上日期才
 $ rake post title="Hi, Jekyll" date="2012-03-04"
 此rake任务不会覆盖任何已存在的博文，除非你让它那样做。
 
@@ -55,6 +55,11 @@ $ rake page name="pages/about"
 Jekyll-Bootstrap页面样例
 
 Jekyll-Bootstrap同样提供了许多预配置好页面样例提供用户参考。你可以学习它们的代码然后按照你需要的样子定制。
+
+发布
+git add .
+git commit -m "jekyll quick start"
+git push origin master
 
 参照
 http://jekyllbootstrap.com/usage/jekyll-quick-start.html
