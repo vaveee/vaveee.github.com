@@ -28,7 +28,7 @@ $ gem install jekyll
 
 cd USENAME.github.com
 
-jekyll --server
+jekyll serve
 
 将USENAME改为你自己的GitHub用户名
 
@@ -65,6 +65,8 @@ $ rake page name="pages/about"
 此rake任务会自动创建一个有着正确的格式化好文件名的文件和一个YAML Front Matter，同时包含Jekyll Bootstrap的设置文件。
 
 ####Jekyll-Bootstrap页面样例
+
+http://jekyllbootstrap.com/
 
 Jekyll-Bootstrap同样提供了许多预配置好页面样例提供用户参考。你可以学习它们的代码然后按照你需要的样子定制。
 
