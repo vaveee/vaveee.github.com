@@ -8,92 +8,55 @@ tags:
 
 
 ---
-http://jekyllbootstrap.com/usage/jekyll-quick-start.html
-
-1. Create a New Repository
-
-Go to your https://github.com and create a new repository named USERNAME.github.com
-
-2. Install Jekyll-Bootstrap
-
-Enter these commands into your terminal in a directory you want your blog to be:
 
 
-3. Profit
 
-After GitHub has a couple minutes to do its magic your blog will be publicly available at http://USERNAME.github.com
-Already have your blog on GitHub?
+用Jekyll写博客
 
-I'll assume you have the Jekyll gem installed on your local machine. Run Jekyll-Bootstrap locally to see what all the fuss is about:
+快速通过GitHub Pages安装博客并发布。然后在本地运行你的博客并创建你的第一个Post和页面。
 
-$ git clone https://github.com/plusjade/jekyll-bootstrap.git
-$ cd jekyll-bootstrap
-$ jekyll serve
-See it in action at http://localhost:4000.
+安装Jekyll-Bootsrap
 
-2. Run Jekyll Locally
-In order to preview your blog locally you'll need to install the Jekyll ruby gem. Note gem dependencies will also be installed. You don't have to run a local version but it helps if you want to preview your content before publishing.
+安装Jekyll-Bootsrap，如果你还没安装好。Jekyll-Bootsrap是一个博客框架，拥有内建的主题、分析、评论以及Post/Page建立功能。
 
 $ gem install jekyll
-If you run into a problem please consult the original Jekyll installation documentation. You can also create a support issue using GitHub Issues.
+如果安装出了问题，请看看原始的Jekyll安装文档。你也可以通过GitHub Issues来创建一个支持issue。
 
-Once the gem is installed you can navigate to your Jekyll-Bootstrap directory. If you've followed the homepage instructions this will be: USERNAME.github.com. Once in the directory you'll run jekyll with server support:
+一旦这个gem安装好，你就可以转到你的Jekyll-Bootsrap安装目录。如果你一直跟着首页的说明来做，此目录将是：USERNAME.github.com。进入此目录后，你就可以运行有服务器支持的jekyll：
 
-remember to change USERNAME to your GitHub username.
+cd USENAME.github.com
+jekyll --server
+# 记得将USENAME改为你自己的GitHub用户名
+新建一篇博文（Post）
 
-$ cd USERNAME.github.com 
-$ jekyll serve
-Your blog is now available at: http://localhost:4000/.
-
-3. Create a Post
-Create posts easily via rake task:
+你可以轻易地通过一个rake任务来新建博文：
 
 $ rake post title="Hello World"
-The rake task automatically creates a file with properly formatted filename and YAML Front Matter. Make sure to specify your own title. By default, the date is the current date.
+此rake任务会自动创建一个有着正确的格式化好文件名的文件和一个YAML Front Matter。确保指定一个你自己的标题。缺省日期是当前日期。
 
-The rake task will never overwrite existing posts unless you tell it to.
+# 根据我的测试，写上日期才不会报错
+$ rake post title="Hi, Jekyll" date="2012-03-04"
+此rake任务不会覆盖任何已存在的博文，除非你让它那样做。
 
-4. Create a Page
-Create pages easily via rake task:
+新建一个页面（Page）
+
+新建页面也是通过rake任务，同样很容易：
 
 $ rake page name="about.md"
-Create a nested page:
+新建一个嵌套页面：
 
 $ rake page name="pages/about.md"
-Create a page with a "pretty" path:
+新建一个有着好看路径的页面：
 
 $ rake page name="pages/about"
-# this will create the file: ./pages/about/index.html
-The rake task automatically creates a page file with properly formatted filename and YAML Front Matter as well as includes the Jekyll Bootstrap "setup" file.
+# 这会建立一个文件： ./pages/about/index.html
+此rake任务会自动创建一个有着正确的格式化好文件名的文件和一个YAML Front Matter，同时包含Jekyll Bootstrap的设置文件。
 
-5. Publish
-After you've added posts or made changes to your theme or other files, simply commit them to your git repo and push the commits up to GitHub.
+Jekyll-Bootstrap页面样例
 
-$ git add .
-$ git commit -m "Add new content"
-$ git push origin master
-A GitHub post-commit hook will automatically deploy your changes to your hosted blog. You will receive a success or failure notice for every commit you make to your blog.
+Jekyll-Bootstrap同样提供了许多预配置好页面样例提供用户参考。你可以学习它们的代码然后按照你需要的样子定制。
 
-6. Customize
-Jekyll-Bootstrap can be used as-is as a basic blogging platform. However there are plenty of ways to dig into deeper customization. The following outlines deeper Jekyll-Bootstrap customization techniques:
+参照
+http://jekyllbootstrap.com/usage/jekyll-quick-start.html
+https://github.com/deercoder/0-tech-notes/blob/master/Reference/Jekyll%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.md
 
-Themes
-
-Jekyll-Bootstrap supports modular theming. Themes can co-exist and be enabled/disabled on demand. Editing, configuring, and creating themes is docummented in the Theming section.
-
-Blog Configuration
-
-Jekyll and Jekyll-Bootstrap has a simple but powerful Jekyll Configuration System. You can:
-
-Specify a custom permalink format for blog posts.
-Specify a commenting engine like disqus, intensedebate, livefyre, or custom.
-Specify an analytics engine like google, getclicky, or custom.
-Programming Interface
-
-The API pages document main data-structures and code available for use in Jekyll and Jekyll-Bootstrap. Consult these pages for how and where to use the data and code provided.
-
-Jekyll Introduction
-
-Highly Recommend
-
-I highly recommend reading the Jekyll Introduction if you plan to customize your blog. The introduction is meant for core understanding of how and why Jekyll works the way it does. This will provide you with the proper context, knowledge-base, and fundamentals necessary to understand and be efficient in working with Jekyll and Jekyll-Bootstrap.
