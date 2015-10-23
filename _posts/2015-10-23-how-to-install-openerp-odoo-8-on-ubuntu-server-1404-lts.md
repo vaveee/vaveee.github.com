@@ -292,7 +292,7 @@ etc/odoo-server.conf
 式来验证。
 
 
-第九步，其他
+第九步，其他 
 ==================
 
 
@@ -308,4 +308,3 @@ Add the following line as the first line of pg_hba.conf. It allows access to all
 
 	# TYPE DATABASE USER CIDR-ADDRESS  METHOD
 	host  all  all 0.0.0.0/0 md5
-	

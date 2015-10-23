@@ -26,7 +26,7 @@ Git基础配置
 	git config http.postBuffer 524288000            # 提高push限制
 	git config --list                               # 查看配置
 
-Git编辑常用
+Git编辑常用 
 ================
 
 	git add  <file>
