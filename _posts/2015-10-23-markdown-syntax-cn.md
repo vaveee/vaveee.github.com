@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Markdown 语法详细"
+title: "Markdown语法详细"
 categories:
 - 
 tags:
