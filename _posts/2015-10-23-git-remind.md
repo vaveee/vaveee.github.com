@@ -13,11 +13,11 @@ tags:
 Git基础配置
 ================
 
-	ssh-keygen -t rsa -C "willyan0820@gmail.com"    # 生成ssh keygen
+	ssh-keygen -t rsa -C "hello@163.com"    # 生成ssh keygen
 	pbcopy < ~/.ssh/id_rsa.pub                      # 复制到剪贴板
 
-	git config --global user.name "Will"
-	git config --global user.email "willyan0820@gmail.com"
+	git config --global user.name "hello"
+	git config --global user.email "hello@163.com"
 
 	git config --global core.autocrlf input         # For Mac 换行符
 	git config --global core.autocrlf input         # For Windows 换行符
