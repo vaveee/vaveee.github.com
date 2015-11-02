@@ -80,7 +80,8 @@ Install Odoo 9.0 OS X Yosemite
 
 
 参考：
-获取 Homebrew  http://brew.sh/index_zh-cn.html (http://brew.sh/index_zh-cn.html)
+
+获取 Homebrew  [http://brew.sh/index_zh-cn.html](http://brew.sh/index_zh-cn.html)
 
 postgres安装问题 http://stackoverflow.com/questions/27700596/homebrew-postgres-broken
 
