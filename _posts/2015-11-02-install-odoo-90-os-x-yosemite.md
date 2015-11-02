@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Install Odoo 9.0 OS X Yosemite"
+title: "在mac里安装Odoo9"
 categories:
 - 
 tags:
@@ -8,6 +8,9 @@ tags:
 
 
 ---
+
+Install Odoo 9.0 OS X Yosemite
+
 安装 brew 支持
 	
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
