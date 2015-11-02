@@ -19,13 +19,36 @@ Install Odoo 9.0 OS X Yosemite
 
 	brew update
 	brew install python
-	brew install postgresql
-	/usr/local/Cellar/postgresql/9.4.4: 3014 files, 40M
+	brew install homebrew/versions/postgresql93
 
-设成开机启动 PostgreSQL
+	initdb /usr/local/var/postgres -E utf8    # create a database
+	Success. You can now start the database server using:
 
-	ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
-	launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+    postgres -D /usr/local/var/postgres
+	or
+    pg_ctl -D /usr/local/var/postgres -l logfile start
+
+	postgres -D /usr/local/var/postgres       # serve that database
+	PGDATA=/usr/local/var/postgres postgres   # ...alternatively
+
+	If builds of PostgreSQL 9 are failing and you have version 8.x installed,
+	you may need to remove the previous version first. See:
+	  https://github.com/Homebrew/homebrew/issues/issue/2510
+
+	When installing the postgres gem, including ARCHFLAGS is recommended:
+	  ARCHFLAGS="-arch x86_64" gem install pg
+
+	To install gems without sudo, see the Homebrew documentation:
+	https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Gems,-Eggs-and-Perl-Modules.md
+
+	To have launchd start homebrew/versions/postgresql93 at login:
+	  ln -sfv /usr/local/opt/postgresql93/*.plist ~/Library/LaunchAgents
+	Then to load homebrew/versions/postgresql93 now:
+	  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql93.plist
+	Or, if you don't want/need launchctl, you can just run:
+	  postgres -D /usr/local/var/postgres
+	==> Summary
+	🍺  /usr/local/Cellar/postgresql93/9.3.9: 2950 files, 38M
 
 创建一个 PostgreSQL 用户
 
@@ -81,7 +104,9 @@ Install Odoo 9.0 OS X Yosemite
 
 参考：
 获取 Homebrew  http://brew.sh/index_zh-cn.html
-postgres安装问题 http://stackoverflow.com/questions/27700596/homebrew-postgres-broken
+postgres安装问题 
+http://stackoverflow.com/questions/27700596/homebrew-postgres-broken
+http://hiroz.cn/homebrew-install-versions/
 postgresql教程 http://dhq.me/mac-postgresql-install-usage
 ubuntu安装odoo http://vaveee.github.io/ubuntu-server-1404-install-odoo-90/
 
