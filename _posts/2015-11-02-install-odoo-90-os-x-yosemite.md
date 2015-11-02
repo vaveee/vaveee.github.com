@@ -81,4 +81,8 @@ Install Odoo 9.0 OS X Yosemite
 
 参考：
 获取 Homebrew  http://brew.sh/index_zh-cn.html
+postgres安装问题 http://stackoverflow.com/questions/27700596/homebrew-postgres-broken
+postgresql教程 http://dhq.me/mac-postgresql-install-usage
+ubuntu安装odoo http://vaveee.github.io/ubuntu-server-1404-install-odoo-90/
+
 
