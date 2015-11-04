@@ -3,7 +3,7 @@ layout: post
 title: "git server 搭建 (用Ubuntu linux)"
 categories:
 - 
-tags:
+tags: ubuntu git
 - 
 
 
