@@ -29,6 +29,7 @@ git server 搭建 (用Ubuntu linux)
 	sudo mkdir odoo.git
 
 如果是第二次新增project，记得也要改改资料夹的组跟权限，相关步奏参照step 4
+	
 	cd odoo.git
 	sudo git --bare init
 
