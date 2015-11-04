@@ -3,7 +3,7 @@ layout: post
 title: "require.js.tutorial"
 categories:
 - 
-tags:
+tags: require.js ui
 - 
 
 

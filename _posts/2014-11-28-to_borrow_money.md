@@ -3,7 +3,7 @@ layout: post
 title: "向朋友借钱：文章值得一读，让人思索良久"
 categories:
 - 
-tags:
+tags: 生活
 - 
 
 

@@ -3,7 +3,7 @@ layout: post
 title: "在 Ubuntu Server 14.04 LTS 版上安装 Odoo 8"
 categories:
 - 
-tags:
+tags: ubuntu odoo8 odoo
 - 
 
 

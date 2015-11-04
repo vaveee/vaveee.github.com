@@ -3,7 +3,7 @@ layout: post
 title: "在mac里安装Odoo9"
 categories:
 - 
-tags:
+tags: mac osx odoo9 odoo
 - 
 
 

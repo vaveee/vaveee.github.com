@@ -3,7 +3,7 @@ layout: post
 title: "git  常用备忘"
 categories:
 - 
-tags:
+tags: git 语法
 - 
 
 

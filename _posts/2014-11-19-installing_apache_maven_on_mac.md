@@ -3,7 +3,7 @@ layout: post
 title: "Installing_Apache_Maven_on_Mac"
 categories:
 - 
-tags:
+tags: mac apache
 - 
 
 

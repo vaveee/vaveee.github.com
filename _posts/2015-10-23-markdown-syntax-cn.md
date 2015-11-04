@@ -3,7 +3,7 @@ layout: post
 title: "Markdown语法详细"
 categories:
 - 
-tags:
+tags: markdown
 - 
 
  

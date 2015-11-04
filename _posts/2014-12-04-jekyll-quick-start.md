@@ -3,7 +3,7 @@ layout: post
 title: "用Jekyll写博客"
 categories:
 - 
-tags:
+tags: 博客
 - 
 
 

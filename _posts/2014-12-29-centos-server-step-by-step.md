@@ -3,7 +3,7 @@ layout: post
 title: "centos 6 服务器配置"
 categories:
 - 
-tags:
+tags: centos
 - 
 
 

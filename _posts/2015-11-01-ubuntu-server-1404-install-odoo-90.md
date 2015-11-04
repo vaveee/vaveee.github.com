@@ -3,7 +3,7 @@ layout: post
 title: "Ubuntu Server 14.04 install Odoo 9.0"
 categories:
 - 
-tags:
+tags: ubuntu odoo9 odoo
 - 
 
 

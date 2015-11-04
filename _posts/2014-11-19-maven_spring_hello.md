@@ -3,7 +3,7 @@ layout: post
 title: "Maven_spring_hello"
 categories:
 - 
-tags:
+tags: maven spring java
 - 
 
 
