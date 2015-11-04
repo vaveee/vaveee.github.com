@@ -28,7 +28,7 @@ git server 搭建 (用Ubuntu linux)
 	cd /var/git
 	sudo mkdir odoo.git
 
-# 如果是第二次新增project，记得也要改改资料夹的组跟权限，相关步奏参照step 4
+如果是第二次新增project，记得也要改改资料夹的组跟权限，相关步奏参照step 4
 	cd odoo.git
 	sudo git --bare init
 
@@ -38,7 +38,7 @@ git server 搭建 (用Ubuntu linux)
 	sudo groupadd git
 	sudo usermod -a -G git laval # laval改成你自己的账号。
 
-# 下面这两行，在每次新增新project时要对新的文件夹重做
+下面这两行，在每次新增新project时要对新的文件夹重做
 
 	sudo chgrp -R git /var/git
 	sudo chmod g+rwx -R /var/git
