@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "require.js.tutorial"
-categories:
-- 
+title: require.js.tutorial
+categories: requirejs
 tags: require.js ui
-- 
-
-
 ---
 
 参考链接：http://javascript.ruanyifeng.com/tool/requirejs.html#toc0

@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "git  常用备忘"
-categories:
-- 
+categories: 常用工具
 tags: git 语法
-- 
 
 
 ---

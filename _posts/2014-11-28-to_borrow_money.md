@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "向朋友借钱：文章值得一读，让人思索良久"
-categories:
-- 
+title: 向朋友借钱：文章值得一读，让人思索良久
+categories: 转载
 tags: 生活
-- 
-
-
 ---
 
 向朋友借钱：文章值得一读，让人思索良久

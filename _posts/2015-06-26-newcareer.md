@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "曾李青投资哲学"
-categories:
-- 
+categories: 转载
 tags: 投资
-- 
 
  
 ---

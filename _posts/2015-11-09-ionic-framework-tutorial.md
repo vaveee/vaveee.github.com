@@ -1,10 +1,8 @@
 ---
 layout: post
 title: "Ionic Framework Tutorial"
-categories:
-- 
-tags:
-- 
+categories: 手机开发
+tags: ionic
 
 
 ---

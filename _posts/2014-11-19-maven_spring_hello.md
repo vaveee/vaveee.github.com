@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "Maven_spring_hello"
-categories:
-- 
+title: Maven_spring_hello
+categories: 开发环境
 tags: maven spring java
-- 
-
-
 ---
 http://www.mkyong.com/spring3/spring-3-hello-world-example/
 

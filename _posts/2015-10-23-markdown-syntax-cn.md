@@ -1,12 +1,8 @@
 ---
 layout: post
 title: "Markdown语法详细"
-categories:
-- 
+categories: 常用工具
 tags: markdown
-- 
-
- 
 ---
 
 

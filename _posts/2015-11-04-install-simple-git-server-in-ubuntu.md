@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "git server 搭建 (用Ubuntu linux)"
-categories:
-- 
-tags: ubuntu git
-- 
-
-
+title: "2015-11-04-install-simple-git-server-in-ubuntu"
+categories: 开发环境
+tags: ubuntu git 
 ---
 
 

@@ -6,11 +6,8 @@ author: vaveee
 qq: 344375148
 email: vaveee@qq.com
 duoshuo: vaveee
-beian:
-cnzz:
-weibo:
 github: vaveee
-pygments: true
+highlighter: true
 safe: true
 paginate: 20
 about: "这里是 李冠南 的个人博客，创建于 2014年10月23号。"

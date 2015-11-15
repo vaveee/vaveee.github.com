@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'centos6.x 安装nginx+thin+redmine  '
-categories: 文档
+title: 'centos6.x 安装nginx+thin+redmine'
+categories: 开发环境
 tags: linux  centos  thin  redmine  nginx
 ---
 

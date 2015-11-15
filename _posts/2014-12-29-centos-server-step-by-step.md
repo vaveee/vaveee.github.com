@@ -1,12 +1,8 @@
 ---
 layout: post
 title: "centos 6 服务器配置"
-categories:
-- 
+categories: 开发环境
 tags: centos
-- 
-
-
 ---
 
 yum update

@@ -1,13 +1,10 @@
 ---
 layout: post
-title: "Installing_Apache_Maven_on_Mac"
-categories:
-- 
-tags: mac apache
-- 
-
-
+title: Installing_Apache_Maven_on_Mac
+categories: 开发环境
+tags: apache mac
 ---
+
 Download the Apache Maven bin.tar.gz file from http://maven.apache.org/download.cgi.
 Extract the distribution archive to the directory where you want to install Maven, e.g. /Applications/apache-maven-3.1.1.
 

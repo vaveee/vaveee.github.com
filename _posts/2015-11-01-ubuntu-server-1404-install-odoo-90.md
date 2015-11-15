@@ -1,12 +1,8 @@
 ---
 layout: post
 title: "Ubuntu Server 14.04 install Odoo 9.0"
-categories:
-- 
+categories: 开发环境
 tags: ubuntu odoo9 odoo
-- 
-
-
 ---
 
 http://blog.csdn.net/wangnan537/article/details/48895897

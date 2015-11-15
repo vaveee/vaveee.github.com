@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "用Jekyll写博客"
-categories:
-- 
-tags: 博客
-- 
-
-
+title: 用Jekyll写博客
+categories: 开发环境
+tags: 写博客
 ---
 
 

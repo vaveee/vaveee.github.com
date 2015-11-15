@@ -3,7 +3,7 @@ date: 2014-10-22 00:14:31+00:00
 layout: post
 title: 皮皮的快乐生活
 categories: 生活
-tags: 照片 小侄子
+tags: 皮皮
 ---
 
 

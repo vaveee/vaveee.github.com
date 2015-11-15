@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "在mac里安装Odoo9"
-categories:
-- 
-tags: mac osx odoo9 odoo
-- 
-
-
+title: "2015-11-02-install-odoo-90-os-x-yosemite"
+categories: 开发环境
+tags: odoo osx
 ---
 
 Install Odoo 9.0 OS X Yosemite
