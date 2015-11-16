@@ -8,7 +8,14 @@ tags: ionic
 ---
 
 
-[原文](https://ccoenraets.github.io/ionic-tutorial/install-ionic.html)
+
+1.  Install Ionic
+2.  Starting the Node Server
+3.  Creating an Ionic Application
+4.  Creating the Session Service
+5.  Creating the Session Controllers
+6.  Creating Templates
+7.  Routing
 
 Module 1: Install Ionic
 ================ 
@@ -295,3 +302,7 @@ If it's not running, open a command prompt, navigate (cd) to the ionic-tutorial 
 	ionic serve
 
 In the conference application, open the side menu ("Hamburger" icon in the upper left corner) and select Sessions. Select a session in the list to see the session details.
+
+
+
+参照[ionic hello world](https://ccoenraets.github.io/ionic-tutorial/install-ionic.html)部分修改

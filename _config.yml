@@ -1,4 +1,7 @@
-markdown: rdiscount
+# Dependencies
+markdown: kramdown
+highlighter: pygments
+
 permalink: /:title/
 url: http://vaveee.github.com
 name: vaveee
@@ -7,7 +10,6 @@ qq: 344375148
 email: vaveee@qq.com
 duoshuo: vaveee
 github: vaveee
-highlighter: true
 safe: true
 paginate: 20
 about: "这里是 李冠南 的个人博客，创建于 2014年10月23号。"
