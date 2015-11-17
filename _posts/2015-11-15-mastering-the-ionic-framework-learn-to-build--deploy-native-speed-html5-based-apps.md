@@ -716,6 +716,60 @@ DiscoverCtrl中，把getNextSongs() 改为 init()
 	      hideLoading();
 	    });
 
+切换的歌曲的时候，我们也添加加载项，这次我们添加一个ico
+
+修改discover.html，
+
+      <div class="item">
+        <h2>{{ currentSong.title }} <span ng-hide="currentSong.loaded"><i class="ion-loading-c"></i></span></h2>
+        <p>{{ currentSong.artist }}</p>
+      </div>
+
+修改DiscoverCtrl中的init，在歌曲加载完成后设定$scope.currentSong.loaded为true。
+
+	  Recommendations.init()
+	    .then(function(){
+
+	      $scope.currentSong = Recommendations.queue[0];
+
+	      return Recommendations.playCurrentSong();
+
+	    })
+	    .then(function(){
+	      // turn loading off
+	      hideLoading();
+	      $scope.currentSong.loaded = true;
+	    });
+
+
+修改sendFeedback，设定新加载歌曲时的$scope.currentSong.loaded状态
+
+	// fired when we favorite / skip a song.
+	  $scope.sendFeedback = function (bool) {
+
+	    // first, add to favorites if they favorited
+	    if (bool) User.addSongToFavorites($scope.currentSong);
+
+	    // set variable for the correct animation sequence
+	    $scope.currentSong.rated = bool;
+	    $scope.currentSong.hide = true;
+
+	    // prepare the next song
+	    Recommendations.nextSong();
+
+	    // update current song in scope, timeout to allow animation to complete
+	    $timeout(function() {
+	      $scope.currentSong = Recommendations.queue[0];
+	      $scope.currentSong.loaded = false;
+	    }, 250);
+
+	    Recommendations.playCurrentSong().then(function() {
+	      $scope.currentSong.loaded = true;
+	    });
+
+	  }
+
+看看效果吧。
 
 
 
