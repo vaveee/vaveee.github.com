@@ -454,12 +454,7 @@ controller内赋值。
 在app.js中创建一个server
 
 	.constant('SERVER', {
-	  // if using local server
-	  //url: 'http://localhost:3000'
-
-	  // if using our public heroku server
-	  url: 'http://yyg.windwww.com'
-	  // url: 'http://192.168.1.100:8000'
+	   url: 'http://192.168.1.100:8000'
 	});
 
 在services.js中创建factory，从server返回一个数组。
@@ -686,8 +681,43 @@ DiscoverCtrl中，把getNextSongs() 改为 init()
 试一试吧。
 
 
-Wrapping up the UI and core functionality
-================ 
+优化ui
+================
+根据网络状况，app内容加载可能会有延迟，下面我们为等待加载添加一个等待图标。
+
+我们使用 $ionicLoading 来实现这个效果。
+
+修改DiscoverCtrl方法，添加参数$ionicLoading
+
+添加显示和隐藏$ionicLoading的方法，并且调用它，只在初始化的时候调用。
+
+	.controller('DiscoverCtrl', function($scope, $ionicLoading, $timeout, User, Recommendations) {
+	  // helper functions for loading
+	  var showLoading = function() {
+	    $ionicLoading.show({
+	      template: '<i class="ion-loading-c"></i>',
+	      noBackdrop: true
+	    });
+	  }
+
+	  var hideLoading = function() {
+	    $ionicLoading.hide();
+	  }
+
+	  // set loading to true first time while we retrieve songs from server.
+	  showLoading();
+
+在DiscoverCtrl的Recommendations.init()加载完成的时候调用 hideLoading()，歌曲开始播放后，隐藏加载项。
+
+	  Recommendations.init()
+	    .then(function(){
+	      $scope.currentSong = Recommendations.queue[0];
+	      Recommendations.playCurrentSong();
+	      hideLoading();
+	    });
+
+
+
 
 Adding badges to the tab bar
 ================ 
