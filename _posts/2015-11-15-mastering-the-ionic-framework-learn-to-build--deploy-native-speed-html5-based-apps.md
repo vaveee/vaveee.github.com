@@ -772,11 +772,79 @@ DiscoverCtrl中，把getNextSongs() 改为 init()
 看看效果吧。
 
 
-
-Adding badges to the tab bar
+在tab添加歌曲数
 ================ 
+修改User Services，添加参数newFavorites，用于存储歌曲新增数目
 
-Creating and persisting user data
+	  var o = {
+	    favorites: [],
+	    newFavorites: 0
+	  }
+
+收藏歌曲时，添加newFavorites
+	
+	  o.addSongToFavorites = function(song) {
+	    // make sure there's a song to add
+	    if (!song) return false;
+
+	    // add to favorites array
+	    o.favorites.unshift(song);
+	    o.newFavorites++;
+	  }
+
+返回新增歌曲数目
+
+	  o.favoriteCount = function() {
+	    return o.newFavorites;
+	  }
+
+在TabsCtrl中创建User.favoriteCount()返回新增歌曲数目
+
+	.controller('TabsCtrl', function($scope, User, Recommendations) {
+	  // expose the number of new favorites to the scope
+	  $scope.favCount = User.favoriteCount;
+
+	  ...
+	}
+
+用户点击favorites tab时，把新增歌曲清零。
+
+	.controller('TabsCtrl', function($scope, User, Recommendations) {
+	  // stop audio when going to favorites page
+	  $scope.enteringFavorites = function() {
+	  	User.newFavorites = 0;
+	    Recommendations.haltAudio();
+	  };
+
+最后，在页面添加favCount()
+
+	<ion-tab title="Favorites" icon-off="ion-music-note" icon-on="ion-music-note" badge="favCount()" badge-style="badge-assertive" on-select="enteringFavorites()" on-deselect="leavingFavorites()" href="#/tab/favorites">
+
+当我们添加favorite歌曲时，在favorite标签的新增歌曲就会加1.
+
+我们的app现在只能听30秒歌曲，要完整的歌曲，需要访问歌曲的open_url链接。
+
+在 favorites.html添加openSong()点击方法。
+
+	<ion-item ng-repeat="song in favorites" class="item-avatar" ng-click="openSong(song)">
+
+在fFavoritesCtrl完成该方法
+
+	.controller('FavoritesCtrl', function($scope, User, $window) {
+		$scope.favorites = User.favorites;
+
+		 $scope.removeSong = function(song, index) {
+		    User.removeSongFromFavorites(song, index);
+		  }
+
+		  $scope.openSong = function(song) {
+		    $window.open(song.open_url, "_system");
+		  }
+	})
+	
+完成！
+
+持久化用户数据
 ================ 
 
 Some Ionic challenges for those hungry for more
