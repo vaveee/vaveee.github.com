@@ -16,13 +16,13 @@ tags: ionic
 
 开始
 ================ 
-我们可以[开始一个ionic项目](http://ionicframework.com/docs/cli/start.html)，运行
+[开始一个ionic项目](http://ionicframework.com/docs/cli/start.html)，运行
 
 	ionic start myApp blank
 
 该命令会新建一个空的ionic项目。
 
-为了方便演示，今天我们直接clone完整的[课程项目](https://github.com/EricSimons/ionic-course)
+先clone基础[课程项目](https://github.com/EricSimons/ionic-course)
 
 	git clone https://github.com/EricSimons/ionic-course
 
@@ -30,7 +30,7 @@ tags: ionic
 
 	npm install
 
-运行web启动，修改文件会自动加载
+运行web启动，修改文件会项目会自动加载
 
 	ionic serve
 
@@ -846,6 +846,8 @@ DiscoverCtrl中，把getNextSongs() 改为 init()
 
 持久化用户数据
 ================ 
+
+
 
 Some Ionic challenges for those hungry for more
 ================ 
