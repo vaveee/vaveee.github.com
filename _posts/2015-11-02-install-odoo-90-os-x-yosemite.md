@@ -87,4 +87,5 @@ postgresql教程 [http://dhq.me/mac-postgresql-install-usage](http://dhq.me/mac-
 
 ubuntu安装odoo [http://vaveee.github.io/ubuntu-server-1404-install-odoo-90/](http://vaveee.github.io/ubuntu-server-1404-install-odoo-90/)
 
+CentOS安装odoo9 [https://blog.apesay.net/217.html/](https://blog.apesay.net/217.html/)
 
