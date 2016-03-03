@@ -22,7 +22,8 @@ Odoo 9.0版已于2015年10月1日正式发布，相较Odoo 8.0版而言，新版
 2. 新建系统用户用于运行Odoo程序
 运行如下命令创建系统用户：
 
-	sudo adduser --system --home=/opt/odoo9 --group odoo9  #新建系统用户odoo9，指定home目录为/opt/odoo9  
+	sudo adduser --system --home=/opt/odoo9 --group odoo9  
+	#新建系统用户odoo9，指定home目录为/opt/odoo9  
 
 系统用户不能用于登录并且没有shell，但当需要以它的身份进行特定操作时，可以用su命令切换用户：
 
