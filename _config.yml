@@ -1,6 +1,6 @@
 # Dependencies
 markdown: kramdown
-highlighter: pygments
+rouge: pygments
 
 permalink: /:title/
 url: http://vaveee.github.com
