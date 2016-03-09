@@ -235,6 +235,7 @@ Odoo 9.0版已于2015年10月1日正式发布，相较Odoo 8.0版而言，新版
 
 	exit 0
 
+
 设定脚本权限
 
 	sudo chmod 755 /etc/init.d/odoo-server
