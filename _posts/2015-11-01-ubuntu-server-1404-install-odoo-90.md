@@ -128,33 +128,147 @@ Odoo 9.0版已于2015年10月1日正式发布，相较Odoo 8.0版而言，新版
 如果一切正常，按 Ctrl+C停止服务器，然后用exit命令离开odoo9用户，回到你自己登陆的shell。如果报错，则需要查看odoo-server.log排查错误。(为方便起见，可以先将配置文件中的logfile一行注释掉，这样就可以直接在控制台看到报错信息)
 
 8. 安装启动脚本
-启动、停止Odoo服务需要多个步骤的操作，比较繁琐，可以安装启动脚本以批处理的方式处理这些步骤。Odoo程序提供了一个现成的脚本openerp-server.init，位于/opt/odoo9/server/install/目录。但需要一点小改动，因为我们不是按odoo的默认安装方式装的。这里有个修改好的脚本文件，下载此脚本拷贝到/etc/init.d/，然后把它改成可执行文件，赋给root用户：
+
+启动、停止Odoo服务需要多个步骤的操作，比较繁琐，可以安装启动脚本以批处理的方式处理这些步骤。
+
+复制配置文件 	sudo cp /opt/odoo/debian/openerp-server.conf /etc/odoo-server.conf
+
+修改一下 
+
+	[options]
+	; This is the password that allows database operations:
+	; admin_passwd = admin
+	db_host = False
+	db_port = False
+	db_user = odoo9
+	db_password = False
+	#addons_path = /usr/lib/python2.7/dist-packages/openerp/addons
+	addons_path = /opt/odoo9/odoo9/addons
+	logfile = /var/log/odoo/odoo-server.log
+	xmlrpc_port = 8069
+
+启动脚本 /etc/init.d/odoo-server
+
+	#!/bin/sh
+	### BEGIN INIT INFO
+	# Provides: odoo-server
+	# Required-Start: $remote_fs $syslog
+	# Required-Stop: $remote_fs $syslog
+	# Should-Start: $network
+	# Should-Stop: $network
+	# Default-Start: 2 3 4 5
+	# Default-Stop: 0 1 6
+	# Short-Description: Odoo ERP
+	# Description: Odoo is a complete ERP business solution.
+	### END INIT INFO
+
+	PATH=/bin:/sbin:/usr/bin
+	# Change the Odoo source files location according your needs.
+	DAEMON=/opt/odoo9/odoo9/openerp-server
+	# Use the name convention of your choice 
+	NAME=odoo-server
+	DESC=odoo-server
+
+	# Specify the user name (Default: odoo).
+	USER=odoo9
+
+	# Specify an alternate config file (Default: /etc/odoo-server.conf).
+	CONFIGFILE="/etc/odoo-server.conf"
+
+	# pidfile
+	PIDFILE=/var/run/$NAME.pid
+
+	# Additional options that are passed to the Daemon.
+	DAEMON_OPTS="-c $CONFIGFILE"
+
+	[ -x $DAEMON ] || exit 0
+	[ -f $CONFIGFILE ] || exit 0
+
+	checkpid() {
+	[ -f $PIDFILE ] || return 1
+	pid=`cat $PIDFILE`
+	[ -d /proc/$pid ] && return 0
+	return 1
+	}
+
+	case "${1}" in
+	start)
+	echo -n "Starting ${DESC}: "
+
+	start-stop-daemon --start --quiet --pidfile ${PIDFILE} \
+	--chuid ${USER} --background --make-pidfile \
+	--exec ${DAEMON} -- ${DAEMON_OPTS}
+
+	echo "${NAME}."
+	;;
+
+	stop)
+	echo -n "Stopping ${DESC}: "
+
+	start-stop-daemon --stop --quiet --pidfile ${PIDFILE} \
+	--oknodo
+
+	echo "${NAME}."
+	;;
+
+	restart|force-reload)
+	echo -n "Restarting ${DESC}: "
+
+	start-stop-daemon --stop --quiet --pidfile ${PIDFILE} \
+	--oknodo
+
+	sleep 1
+
+	start-stop-daemon --start --quiet --pidfile ${PIDFILE} \
+	--chuid ${USER} --background --make-pidfile \
+	--exec ${DAEMON} -- ${DAEMON_OPTS}
+
+	echo "${NAME}."
+	;;
+
+	*)
+	N=/etc/init.d/${NAME}
+	echo "Usage: ${NAME} {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+	esac
+
+	exit 0
+
+设定脚本权限
+
+	sudo chmod 755 /etc/init.d/odoo-server
+	sudo chown root: /etc/init.d/odoo-server
 
 
-	sudo chmod 755 /etc/init.d/odoo9-server  
-	sudo chown root: /etc/init.d/odoo9-server  
+	sudo chown -R odoo: /opt/odoo/
 
-要启动Odoo服务器，输入:
+	sudo chown odoo:root /var/log/odoo
 
-	sudo /etc/init.d/odoo9-server start    
+	sudo chown odoo: /etc/odoo-server.conf
+	sudo chmod 640 /etc/odoo-server.conf
 
-这时可以查看日志文件，查看Odoo是否已经启动：
+启动
 
-	less /var/log/odoo9/odoo9-server.log  
+	sudo /etc/init.d/odoo-server start
 
-要退出less命令的查看界面，只需按一下q键。如果启动过程中出现问题，可以依据日志文件的内容查找原因。
-下边检查odoo服务器是否可以被恰当地停止：
+查看日志
 
-	sudo /etc/init.d/odoo9-server stop  
-	
-检查下日志文件，确定下服务已经停止，也可以用top命令查看Ubuntu服务器正在运行的进程表来确认。(退出top命令的查看界面也是按q键)
-9. 将Odoo设为开机自启动
-让启动脚本随着Ubuntu服务器的开、关机而自动启动、关闭Odoo服务。
+	tail -f /var/log/odoo/odoo-server.log
 
+关闭
 
-	sudo update-rc.d odoo9-server defaults  
+	sudo /etc/init.d/odoo-server stop
 
-现在就可以重启动你的服务器，当你再登录进来的时候，Odoo应该已经在运行了。输入如下命令查看Odoo是否已在运行：
+查看
+
+	http://IP:8069
 
 
-	ps aux | grep odoo9  
+
+参考：
+
+1. install-odoo-9-erp-on-ubuntu-14-04 [https://www.linode.com/docs/websites/cms/install-odoo-9-erp-on-ubuntu-14-04](https://www.linode.com/docs/websites/cms/install-odoo-9-erp-on-ubuntu-14-04)
+
+
+
