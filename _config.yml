@@ -1,6 +1,9 @@
 # Dependencies
 markdown: kramdown
 rouge: pygments
+gems: [jekyll-paginate]
+paginate: 15
+paginate_path: "page:num"
 
 permalink: /:title/
 url: http://vaveee.github.com
@@ -10,6 +13,5 @@ qq: 344375148
 email: vaveee@qq.com
 duoshuo: vaveee
 github: vaveee
-safe: true
-paginate: 20
+#safe: true
 about: "这里是 李冠南 的个人博客，创建于 2014年10月23号。"
