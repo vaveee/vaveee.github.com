@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "”PostgreSQL_Doc”"
-categories:
+categories: database
 - 
-tags:
+tags: database
 - 
 
 
