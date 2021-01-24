@@ -1,13 +1,11 @@
 ---
+date: 2016-03-03 00:14:31+00:00
 layout: post
-title: "”PostgreSQL_Doc”"
+title: PostgreSQL_Doc
 categories: database
-- 
-tags: database
-- 
-
-
+tags: database postgres
 ---
+
 
 PostgreSQL 中文资料汇总  
 
