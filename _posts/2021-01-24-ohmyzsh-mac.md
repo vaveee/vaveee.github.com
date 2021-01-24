@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ohmyzsh配置酷炫的mac终端"
-categories: tools 
+categories: 常用工具 
 tags: tools ohmyzsh
 ---
 
