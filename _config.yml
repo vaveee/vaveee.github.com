@@ -16,3 +16,5 @@ github: vaveee
 plugins: [jekyll-paginate]
 #safe: true
 about: "这里是 辣味儿 的个人博客，创建于 2014年10月23号。"
+
+theme: jekyll-theme-cayman
